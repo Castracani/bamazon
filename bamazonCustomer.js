@@ -55,11 +55,39 @@ var itemPurchase = function () {
             {
               stock_quantity: updateQuantity
             }
-          ], function(err, res) {});
+          ], function (err, res) { });
           var total = res[0].price * answer.quantity;
           console.log("Thank you for shopping at Bamazon! Your total is $" + total.toFixed(2));
+          continueShopping();
+        }
+        else {
+          console.log("Sorry, Bamazon currently doesn't have enough of what you want!");
+          continueShopping();
         }
       })
     })
 };
-displayForUser();
+
+var continueShopping = function() {
+  inquirer.prompt([
+    {
+      type: "list",
+      name: "continue",
+      message: "Would you like to continue shopping with us?",
+      choices: ["Yes", "No"],
+      default: "No"
+    }
+  ]).then(function(answer) {
+    switch(answer.action) {
+        case 'Yes':
+            displayForUser();
+        break;
+
+        case 'No':
+            connection.end();
+        break;
+    }
+})
+};
+
+continueShopping();
