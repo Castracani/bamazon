@@ -47,7 +47,18 @@ var itemPurchase = function () {
   ])
     .then(function (answer) {
       connection.query("SELECT product_name, department_name, price, stock_quantity FROM products WHERE ?", { item_id: answer.id }, function (err, res) {
-        console.log('\n  So, you would like to buy ' + answer.quantity + ' ' + res[0].product_name + ' at $' + res[0].price + ' each, right?');
+        console.log('\n  So, you would like to buy ' + answer.quantity + ' ' + res[0].product_name + ' at $' + res[0].price + ' each.');
+
+        if (answer.quantity <= res[0].stock_quantity) {
+          var updateQuantity = res[0].stock_quantity - answer.quantity;
+          connection.query("UPDATE products SET ? WHERE ?", [
+            {
+              stock_quantity: updateQuantity
+            }
+          ], function(err, res) {});
+          var total = res[0].price * answer.quantity;
+          console.log("Thank you for shopping at Bamazon! Your total is $" + total.toFixed(2));
+        }
       })
     })
 };
