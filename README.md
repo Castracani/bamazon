@@ -28,3 +28,13 @@ When the user wishes to buy an item that Bamazon doesn't have enough quantity in
 If the user decides that they're all done with shopping at Bamazon, then the user is given a nice good-bye and the application shuts down.
 
 ![Image of user declining to shop further](/images/bamazon5.png "Image of user declining to shop further")
+
+## Technologies used
+##### # mySQL via mySQL Workbench
+##### # node.js
+##### # JavaScript
+
+## Packages used
+##### # inquirer
+##### # mysql
+##### # cli-table2
