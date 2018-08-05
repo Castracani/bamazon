@@ -30,11 +30,11 @@ If the user decides that they're all done with shopping at Bamazon, then the use
 ![Image of user declining to shop further](/images/bamazon5.png "Image of user declining to shop further")
 
 ## Technologies used
-# ##mySQL via mySQL Workbench##
-# ##node.js##
-# ##JavaScript##
+# __mySQL via mySQL Workbench__
+# __node.js__
+# __JavaScript__
 
 ## Packages used
-# ##inquirer##
-# ##mysql##
-# ##cli-table2##
+# __inquirer__
+# __mysql__
+# __cli-table2__
