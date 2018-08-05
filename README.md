@@ -13,3 +13,18 @@ After installing the required packages via `npm install`, the user is greeted wi
 
 ![Image of first interaction with bamazonCustomer.js](/images/bamazon1.png "Image of first interaction with bamazonCustomer.js")
 
+After entering the item ID of whichever is in the store, you're prompted for the quantity of what you'd like to get. If Bamazon has the quantity which you want, the application confirms the what you just purchased, and computes the total amount of money you've spent. You're then asked if you would like to shop again for another item.
+
+![Image of successful purchase with bamazon](/images/bamazon2.png "Image of successful purchase with bamazon")
+
+If the user would like to shop again, then a new table is generated with the updated quantities of all items in the store. Notice how the last item in the table, the Speakers, have only 5 remaining, while the initial table had 9 remaining in stock.
+
+![Image of updated inventory](/images/bamazon3.png "Image of updated inventory")
+
+When the user wishes to buy an item that Bamazon doesn't have enough quantity in, the application informs the user that the purchase can't be had due to insufficient supply and prompts the user whether they'd like to purchase another item.
+
+![Image of failed transaction](/images/bamazon4.png "Image of failed transaction")
+
+If the user decides that they're all done with shopping at Bamazon, then the user is given a nice good-bye and the application shuts down.
+
+![Image of user declining to shop further](/images/bamazon5.png "Image of user declining to shop further")
