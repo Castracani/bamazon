@@ -8,3 +8,8 @@ This project emulates an Amazon storefront utilizing mySQL and Node.js, with spe
 * Updates and shows the remaining stock after each purchase
 
 ![Image of mySQL schema used](/images/mysql.png "The creation and skeleton of the bamazon database table")
+
+After installing the required packages via `npm install`, the user is greeted with the contents of the mySQL database, as well as a prompt to enter item ID of whichever item they'd like to purchase. The item ID is the left-most column.
+
+![Image of first interaction with bamazonCustomer.js](/images/bamazon1.png "Image of first interaction with bamazonCustomer.js")
+
