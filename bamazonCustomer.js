@@ -23,7 +23,7 @@ connection.connect(function (err) {
   console.log("connected as id " + connection.threadId + "\n");
 });
 
-var displayForUser = function () {
+var displayInventory = function () {
   var display = new displayTable();
   connection.query('SELECT * FROM products', function (err, results) {
     display.displayInventoryTable(results);
@@ -54,6 +54,9 @@ var itemPurchase = function () {
           connection.query("UPDATE products SET ? WHERE ?", [
             {
               stock_quantity: updateQuantity
+            },
+            {
+              item_id: answer.id
             }
           ], function (err, res) { });
           var total = res[0].price * answer.quantity;
@@ -68,7 +71,7 @@ var itemPurchase = function () {
     })
 };
 
-var continueShopping = function() {
+var continueShopping = function () {
   inquirer.prompt([
     {
       type: "list",
@@ -77,17 +80,19 @@ var continueShopping = function() {
       choices: ["Yes", "No"],
       default: "No"
     }
-  ]).then(function(answer) {
-    switch(answer.action) {
-        case 'Yes':
-            displayForUser();
+  ]).then(function (answer) {
+    switch (answer.continue) {
+      case "Yes":
+      console.log("\n Wonderful! Let me show you the remainder of our inventory.");
+        displayInventory();
         break;
 
-        case 'No':
-            connection.end();
+      case "No":
+      console.log("\n Thank you for your patronage! Have a great day!");
+        connection.end();
         break;
     }
-})
+  })
 };
 
-continueShopping();
+displayInventory();
