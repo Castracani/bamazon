@@ -7,4 +7,4 @@ The BamazonCustomer.js file:
 *Perform computations to see whether the store has the desired amount of the item and informs the user appropriately
 *Updates and shows the remaining stock after each purchase
 
-[[Image of mySQL schema used](https://github.com/Castracani/bamazon/images/mysql.png)]
+[Image of mySQL schema used](/images/mysql.png "Description goes here")
